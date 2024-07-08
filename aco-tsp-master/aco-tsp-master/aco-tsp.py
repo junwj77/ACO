@@ -25,7 +25,7 @@ plt.ylabel('Longitude')
 plt.show()
 plt.close()
 # %%
-# Run ACO
+# Run ACO_SA
 min_path, min_distance = runAcoTsp(space)
 
 # Plot path

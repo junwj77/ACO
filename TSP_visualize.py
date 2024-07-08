@@ -43,6 +43,7 @@ class ACO:
         self.best_route = None
         self.best_length = float('inf')
 
+
     def solve(self):
         length_history = []
         for iteration in range(self.iterations):
@@ -58,6 +59,9 @@ class ACO:
 
         self.plot_length_history(length_history)
         self.plot_best_route(self.coords)
+
+        # Print the final best route length
+        print("Final best route length:", self.best_length)
 
     def construct_solutions(self):
         all_routes = []
@@ -119,7 +123,7 @@ class ACO:
 
 
 # Parameters: num_cities, num_ants, alpha, beta, evaporation_rate, Q, iterations, update_interval
-coords = load_tsp_data('aco-tsp-master/aco-tsp-master/data/kroA100.tsp')
+coords = load_tsp_data('aco-tsp-master/aco-tsp-master/data/d18512.tsp')
 distance_matrix = calculate_distance_matrix(coords)
 
 aco = ACO(distance_matrix=distance_matrix, num_ants=20, alpha=1, beta=1, evaporation_rate=0.5, Q=5, iterations=100, update_interval=10)

@@ -3,7 +3,7 @@ from library import *
 import matplotlib.pyplot as plt
 
 """
-    Run Ant Colony Optimization (ACO) algorithm for a given Symmetric traveling salesman problem (TSP)
+    Run Ant Colony Optimization (ACO_SA) algorithm for a given Symmetric traveling salesman problem (TSP)
     @arg
         {string} tsp    -- The TSP file src name (located in /data folder)
 
@@ -99,7 +99,7 @@ def saveSpacePlot(tsp, space):
         {numpy.ndarray} space   -- The space
 
     @export
-        {png}                   -- Generated .png for ACO-TSP path result plot
+        {png}                   -- Generated .png for ACO_SA-TSP path result plot
 """
 def savePathPlot(i, n, tsp, space, min_path, min_distance):
     # Plot nodes
@@ -135,7 +135,7 @@ def savePathPlot(i, n, tsp, space, min_path, min_distance):
         {float} rho {0.5}           -- Rho algorithm parameter, pheromones evaporation rate
 
     @export
-        {txt}                       -- Generated .txt for ACO-TSP results
+        {txt}                       -- Generated .txt for ACO_SA-TSP results
 """
 def saveResultsTxt(src, results, iterations, colony, alpha, beta, del_tau, rho):
     # Open or create

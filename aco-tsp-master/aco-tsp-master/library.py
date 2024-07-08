@@ -55,10 +55,10 @@ def displayTspHeaders(dict):
     print('Dimension: ', dict['dimension'])
     print('Edge Weight Type: ', dict['edge_weight_type'], '\n')
 
-# [2] ACO
+# [2] ACO_SA
 
 """
-    Run Ant Colony Optimization (ACO) algorithm for a given Symmetric traveling salesman problem (TSP) space and data
+    Run Ant Colony Optimization (ACO_SA) algorithm for a given Symmetric traveling salesman problem (TSP) space and data
     @arg
         {numpy.ndarray} space           -- The space
         {int} iterations {80}           -- Number of iterations (Ending condition)
