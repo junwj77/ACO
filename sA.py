@@ -48,7 +48,7 @@ def plot_length_history(length_history):
     plt.show()
 
 
-def simulated_annealing(coords, iterations, temp, temp_decay=0.99, min_temp=1):
+def simulated_annealing(coords, iterations, temp, temp_decay, min_temp):
     num_cities = len(coords)
     current_route = np.random.permutation(num_cities)
     current_length = calc_route_length(current_route, coords)
@@ -83,8 +83,15 @@ def simulated_annealing(coords, iterations, temp, temp_decay=0.99, min_temp=1):
 def calc_route_length(route, coords):
     return sum(np.linalg.norm(coords[route[i]] - coords[route[(i + 1) % len(route)]]) for i in range(len(route)))
 
-coords = load_tsp_data('aco-tsp-master/aco-tsp-master/data/d18512.tsp')
+coords = load_tsp_data('data/berlin52.tsp')
+#coords = load_tsp_data('data/ali535.tsp')
+#coords = load_tsp_data('data/bays29.tsp')
+#coords = load_tsp_data('data/burma14.tsp')
+#coords = load_tsp_data('data/d18512.tsp')
+#coords = load_tsp_data('data/kroA100.tsp')
+
+
 # Parameters and function call
-simulated_annealing(coords, iterations=100, temp=100, temp_decay=0.995, min_temp=0.1)
+simulated_annealing(coords, iterations=1000, temp=100, temp_decay=0.995, min_temp=0.1)
 
 

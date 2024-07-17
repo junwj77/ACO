@@ -39,7 +39,7 @@ class ACO:
         self.iterations = iterations
         self.update_interval = update_interval
         self.pheromone = np.ones((self.num_cities, self.num_cities))  # Initial pheromone levels
-        self.visibility = 1 / (self.distance_matrix + 1e-10)  # Inverse of distance, avoiding division by zero
+        self.visibility = 1 / (self.distance_matrix + 1e-10)
         self.best_route = None
         self.best_length = float('inf')
 
@@ -122,9 +122,13 @@ class ACO:
         plt.show()
 
 
-# Parameters: num_cities, num_ants, alpha, beta, evaporation_rate, Q, iterations, update_interval
-coords = load_tsp_data('aco-tsp-master/aco-tsp-master/data/d18512.tsp')
+#coords = load_tsp_data('data/berlin52.tsp')
+#coords = load_tsp_data('data/ali535.tsp')
+#coords = load_tsp_data('data/bays29.tsp')
+coords = load_tsp_data('data/burma14.tsp')
+#coords = load_tsp_data('d18512.tsp')
+#coords = load_tsp_data('kroA100.tsp')
 distance_matrix = calculate_distance_matrix(coords)
 
-aco = ACO(distance_matrix=distance_matrix, num_ants=20, alpha=1, beta=1, evaporation_rate=0.5, Q=5, iterations=100, update_interval=10)
+aco = ACO(distance_matrix=distance_matrix, num_ants=10, alpha=1, beta=1, evaporation_rate=0.5, Q=5, iterations=100, update_interval=10)
 aco.solve()
