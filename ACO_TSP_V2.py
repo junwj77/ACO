@@ -91,17 +91,15 @@ class ACO:
         if (iteration + 1) % 10 != 0:
             return
         plt.figure(figsize=(12, 10))
-        for route, _ in all_routes:
-            for i in range(len(route) - 1):
-                start, end = route[i], route[i + 1]
-                plt.plot([self.coords[start, 0], self.coords[end, 0]], [self.coords[start, 1], self.coords[end, 1]],
-                         'o-')
-                mid_x = (self.coords[start, 0] + self.coords[end, 0]) / 2
-                mid_y = (self.coords[start, 1] + self.coords[end, 1]) / 2
-                dx = (self.coords[end, 0] - self.coords[start, 0]) * 0.1
-                dy = (self.coords[end, 1] - self.coords[start, 1]) * 0.1
-                plt.text(mid_x + dx, mid_y + dy,
-                         f"{self.distance_matrix[start][end]:.2f} ph:{self.pheromone[start][end]:.2f}", fontsize=9)
+        for i in range(self.num_cities):
+            for j in range(i,self.num_cities):
+                if i != j:
+                    plt.plot([self.coords[i][0], self.coords[j][0]], [self.coords[i][1], self.coords[j][1]], 'gray',
+                             alpha=0.3)
+                    mid_x = (self.coords[i][0] + self.coords[j][0]) / 2
+                    mid_y = (self.coords[i][1] + self.coords[j][1]) / 2
+                    plt.text(mid_x, mid_y, f"ph:{self.pheromone[i][j]:.2f},{self.pheromone[j][i]:.2f}\nd:{self.distance_matrix[i][j]:.2f}",
+                             fontsize=8, ha='center', color='blue')
 
         for idx, coord in enumerate(self.coords):
             plt.text(coord[0], coord[1], str(idx), color="blue", fontsize=12)
@@ -134,7 +132,7 @@ class ACO:
                      [self.coords[start, 1], self.coords[end, 1]], 'ro-')
             plt.text((self.coords[start, 0] + self.coords[end, 0]) / 2,
                      (self.coords[start, 1] + self.coords[end, 1]) / 2,
-                     f"{self.distance_matrix[start][end]:.2f}",
+                     f"Pheromone: {self.pheromone[start][end]:.2f} d:{self.distance_matrix[start][end]:.2f}",
                      color='blue', fontsize=9)
 
         for idx, coord in enumerate(self.coords):
