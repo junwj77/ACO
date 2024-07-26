@@ -148,7 +148,7 @@ class ACO:
 
 
 # Example usage:
-coords = load_tsp_data('data/burma_modified_7.tsp')
+coords = load_tsp_data('data/burma14.tsp')
 distance_matrix = calculate_distance_matrix(coords)
 aco = ACO(coords=coords, distance_matrix=distance_matrix, num_ants=10, alpha=1, beta=1, evaporation_rate=0.5, Q=10, iterations=100)
 aco.solve()
