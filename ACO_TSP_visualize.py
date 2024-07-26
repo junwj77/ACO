@@ -124,8 +124,8 @@ class ACO:
 
 #coords = load_tsp_data('data/berlin52.tsp')
 #coords = load_tsp_data('data/ali535.tsp')
-#coords = load_tsp_data('data/bays29.tsp')
-coords = load_tsp_data('data/burma14.tsp')
+#coords = load_tsp_data('data/burma14.tsp')
+coords = load_tsp_data('data/burma_modified_7.tsp')
 #coords = load_tsp_data('d18512.tsp')
 #coords = load_tsp_data('kroA100.tsp')
 distance_matrix = calculate_distance_matrix(coords)

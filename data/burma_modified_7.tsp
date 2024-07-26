@@ -1,0 +1,19 @@
+NAME: burma_modified_7
+TYPE: TSP
+COMMENT: 7-Staedte in Burma (Zaw Win)
+DIMENSION: 7
+EDGE_WEIGHT_TYPE: GEO
+EDGE_WEIGHT_FORMAT: FUNCTION
+DISPLAY_DATA_TYPE: COORD_DISPLAY
+NODE_COORD_SECTION
+   1  16.47       96.10
+   2  16.47       94.44
+   3  20.09       92.54
+   4  22.39       93.37
+   5  21.52       95.59
+   6  19.41       97.13
+   7  20.09       94.55
+EOF
+
+
+
